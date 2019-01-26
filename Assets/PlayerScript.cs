@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
 
     public Transform projectile;
 
+    public Transform torchObj;
+
     public GameObject torchPreview;
 
     private float defaultMoveSpeed;
@@ -116,6 +118,9 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void BuildTorch() {
-
+        Instantiate(torchObj, torchPreview.transform.position, Quaternion.identity);
+        isBuilding = false;
+        torchPreview.GetComponent<MeshRenderer>().enabled = false;
+        moveSpeed = defaultMoveSpeed;
     }
 }
