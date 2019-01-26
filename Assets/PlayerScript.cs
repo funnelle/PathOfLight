@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
 
     public float moveSpeed;
 
+    public Transform projectile;
+
     private int groundMask;
 
     private Vector3 moveVals;
@@ -31,14 +33,19 @@ public class PlayerScript : MonoBehaviour
   
     }
 
-    private void GetInput() {
+    private void GetInput () {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         moveVals.Set(h, 0f, v);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RangeAttack();
+        }
     }
 
-    private void Move()
+    private void Move ()
     {
         moveVals = moveVals.normalized * moveSpeed * Time.deltaTime;
         rbody.MovePosition(transform.position + moveVals);
@@ -58,5 +65,12 @@ public class PlayerScript : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             rbody.MoveRotation(newRotation);
         }
+    }
+
+    private void RangeAttack () {
+        //get target loc/direction
+        Vector3 spawnLoc = transform.position + transform.forward * 0.7f;
+        //spawn projectile
+        Instantiate(projectile, spawnLoc, transform.rotation);
     }
 }
