@@ -12,17 +12,30 @@ public class PlayerScript : MonoBehaviour
 
     public Transform projectile;
 
+    public GameObject torchPreview;
+
+    private float defaultMoveSpeed;
+
+    private float buildMoveSpeed;
+
     private int groundMask;
 
     private Vector3 moveVals;
 
     private Rigidbody rbody;
 
+    private bool isBuilding;
+
+    private Vector3 mousePos;
+
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
         groundMask = LayerMask.GetMask("Ground");
-        
+        isBuilding = false;
+        defaultMoveSpeed = moveSpeed;
+        buildMoveSpeed = moveSpeed * 0.6f;
+        mousePos = Vector3.zero;
     }
 
     void FixedUpdate () {
@@ -33,6 +46,7 @@ public class PlayerScript : MonoBehaviour
   
     }
 
+    // Handles all input regarding this object
     private void GetInput () {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -41,16 +55,25 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            RangeAttack();
+            if (!isBuilding)
+                RangeAttack();
+            else
+                BuildTorch();
+        }
+
+        if (Input.GetMouseButtonDown(1)) {
+            BuildMode();
         }
     }
 
+    // Move player based on user input
     private void Move ()
     {
         moveVals = moveVals.normalized * moveSpeed * Time.deltaTime;
         rbody.MovePosition(transform.position + moveVals);
     }
 
+    // Turn object such that it is facing mouse location relative to ground
     private void Rotate () {
         // Create a ray from the mouse cursor on screen in the direction of the camera.
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -64,13 +87,35 @@ public class PlayerScript : MonoBehaviour
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             rbody.MoveRotation(newRotation);
+
+            // get mouse position for other referencing
+            mousePos = playerToMouse;
         }
     }
 
+    // Spawn projectile object in the direction the player is facing
     private void RangeAttack () {
-        //get target loc/direction
         Vector3 spawnLoc = transform.position + transform.forward * 0.7f;
-        //spawn projectile
         Instantiate(projectile, spawnLoc, transform.rotation);
+    }
+
+    private void BuildMode() {
+        if (isBuilding)
+        {
+            isBuilding = false;
+            moveSpeed = defaultMoveSpeed;
+            //cursor reset
+            torchPreview.GetComponent<MeshRenderer>().enabled = false;
+        }
+        else {
+            isBuilding = true;
+            moveSpeed = buildMoveSpeed;
+            //change cursor to preview build
+            torchPreview.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
+
+    private void BuildTorch() {
+
     }
 }
