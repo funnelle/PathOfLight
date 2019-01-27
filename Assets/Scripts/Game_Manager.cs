@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour {
     public List<List<GameObject>> torchLineLists = new List<List<GameObject>>();
@@ -16,6 +17,11 @@ public class Game_Manager : MonoBehaviour {
 
     public float totalMana = 0f;
     public float manaPerSecond = 1.0f;
+    public Text totalManaText;
+    public Text shrinesLeftText;
+    public Text healthText;
+
+    private bool onCollectingMana = false;
 
     private void Start() {
         torchLineLists.Add(torchLine1);
@@ -30,6 +36,7 @@ public class Game_Manager : MonoBehaviour {
     }
 
     private void Update() {
+        //Torch Lines
         for (int i = 0; i < torchLineLists.Count; i++) {
             bool connectionLost = false; 
             for (int j = 0; j < torchLineLists[i].Count; j++) {
@@ -53,12 +60,18 @@ public class Game_Manager : MonoBehaviour {
                 }
             }
         }
-        StartCoroutine(manaCounter());
+        //Mana gui
+        if (totalMana < 200 && onCollectingMana == false) {
+            onCollectingMana = true;
+            StartCoroutine(manaCounter());
+        }
     }
 
     private IEnumerator manaCounter() {
-        yield return new WaitForSeconds(1f);
         totalMana += manaPerSecond;
+        totalManaText.text = "Total Mana: " + totalMana.ToString();
+        yield return new WaitForSeconds(1f);
+        onCollectingMana = false;
     }
 }
 
