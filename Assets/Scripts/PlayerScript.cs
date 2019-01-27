@@ -63,9 +63,9 @@ public class PlayerScript : MonoBehaviour
                 BuildTorch();
         }
 
-        if (Input.GetMouseButtonDown(1)) {
-            BuildMode();
-        }
+       // if (Input.GetMouseButtonDown(1)) {
+       //     BuildMode();
+        //}
     }
 
     // Move player based on user input
