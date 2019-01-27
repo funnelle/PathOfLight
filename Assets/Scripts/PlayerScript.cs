@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour, IDamageable
 { 
     /* 
     25-Jan-2019 https://unity3d.com/learn/tutorials/projects/survival-shooter/player-character?playlist=17144
@@ -12,11 +12,23 @@ public class PlayerScript : MonoBehaviour
 
     public float detectDistance;
 
+    public float health;
+
+    public float atkCost;
+
+    public float torchCost;
+
     public Transform projectile;
 
-    public Transform torchObj;
+    //public Transform torchObj;
+
+    public GameObject gManagerRef;
+
+    private Game_Manager gManagerScript;
 
     //public GameObject torchPreview;
+
+    private float maxHealth = 3.0f;
 
     private float defaultMoveSpeed;
 
@@ -37,17 +49,30 @@ public class PlayerScript : MonoBehaviour
     private GameObject targTorch;
 
     private Coroutine cor;
+
     private RaycastHit torchHit;
+
+    private GameObject hutRef;
+
+    private float regenRange = 3.0f;
+
+    private float regenDelay = 5.0f;
+
+    private float regenCooldown;
 
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
         groundMask = LayerMask.GetMask("Ground");
         torchMask = LayerMask.GetMask("Torch");
+        gManagerScript = gManagerRef.GetComponent<Game_Manager>();
         isBuilding = false;
+        health = maxHealth;
         defaultMoveSpeed = moveSpeed;
         buildMoveSpeed = moveSpeed * 0.6f;
         mousePos = Vector3.zero;
+        hutRef = GameObject.FindGameObjectWithTag("Hut");
+        regenCooldown = Time.time + regenDelay;
     }
 
     void FixedUpdate ()
@@ -69,7 +94,12 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (!isBuilding)
-                RangeAttack();
+            {
+                if (gManagerScript.totalMana > atkCost)
+                    RangeAttack();
+                else
+                    Debug.Log("Insufficient Mana.");
+            }
            // else
                 //BuildTorch();
         }
@@ -85,7 +115,10 @@ public class PlayerScript : MonoBehaviour
                 //RaycastHit torchHit;
                 if (Physics.Raycast(torchDetectRay, out torchHit, detectDistance)) {
                     // turn torch On.
-                    targTorch.GetComponent<Torch_Connection>().powered = true;
+                    if (gManagerScript.totalMana > torchCost)
+                        targTorch.GetComponent<Torch_Connection>().powered = true;
+                    else
+                        Debug.Log("Insufficient Mana.");
                 }
             }
         }
@@ -168,5 +201,30 @@ public class PlayerScript : MonoBehaviour
         Debug.Log(targTorch == torchHit.collider.gameObject);
 
         yield return new WaitForSeconds(2.0f);
+    }
+
+    public void TakeDamage() {
+        health--;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //how to die
+    }
+
+    public void RegenHP() {
+        //detect hut
+        Ray hutRay = new Ray(transform.position, hutRef.transform.position);
+        RaycastHit hutHit;
+        if (Physics.Raycast(hutRay, out hutHit, regenRange)) {
+            if (regenCooldown < Time.time) {
+                health++;
+            }
+        }
+        //increment hp
     }
 }
