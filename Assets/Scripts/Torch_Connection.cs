@@ -7,10 +7,12 @@ public class Torch_Connection : MonoBehaviour {
 
     public bool powered = false;
     public Light torchLight;
+    public ParticleSystem fire;
 
     // Start is called before the first frame update
     void Start() {
         torchLight.intensity = 0f;
+        fire.Stop();
     }
 
     // Update is called once per frame
@@ -18,9 +20,16 @@ public class Torch_Connection : MonoBehaviour {
         //controls light
         if (powered) {
             torchLight.intensity = lightIntensity;
+            if (!fire.isPlaying) {
+                fire.Play();
+            }
+
         }
         else {
             torchLight.intensity = 0f;
+            if (fire.isPlaying) {
+                fire.Stop();
+            }
         }
 
     }

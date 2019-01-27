@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: 38cadff92e22dee4c988b41813922c5c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arm_001_L
+    100002: Arm_001_R
+    100004: Arm_002_L
+    100006: Arm_002_R
+    100008: Arm_003_L
+    100010: Arm_003_R
+    100012: Armature
+    100014: //RootNode
+    100016: Foot_L
+    100018: Foot_R
+    100020: Hand_L
+    100022: Hand_R
+    100024: Head
+    100026: Head_0
+    100028: Horn
+    100030: Horn_Circle
+    100032: Leg_001_L
+    100034: Leg_001_R
+    100036: Leg_002_L
+    100038: Leg_002_R
+    100040: Mane
+    100042: Plane_001
+    100044: Robe
+    100046: Spine_001
+    400000: Arm_001_L
+    400002: Arm_001_R
+    400004: Arm_002_L
+    400006: Arm_002_R
+    400008: Arm_003_L
+    400010: Arm_003_R
+    400012: Armature
+    400014: //RootNode
+    400016: Foot_L
+    400018: Foot_R
+    400020: Hand_L
+    400022: Hand_R
+    400024: Head
+    400026: Head_0
+    400028: Horn
+    400030: Horn_Circle
+    400032: Leg_001_L
+    400034: Leg_001_R
+    400036: Leg_002_L
+    400038: Leg_002_R
+    400040: Mane
+    400042: Plane_001
+    400044: Robe
+    400046: Spine_001
+    2300000: Horn
+    2300002: Horn_Circle
+    2300004: Plane_001
+    3300000: Horn
+    3300002: Horn_Circle
+    3300004: Plane_001
+    4300000: Head
+    4300002: Robe
+    4300004: Mane
+    4300006: Horn_Circle
+    4300008: Plane_001
+    4300010: Horn
+    7400000: Default Take
+    7400002: ArmatureAction
+    7400004: Idle
+    7400006: Attack
+    7400008: Walk
+    9500000: //RootNode
+    13700000: Head
+    13700002: Mane
+    13700004: Robe
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Leg_001_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/Leg_001_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/Spine_001
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L/Hand_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R/Hand_R
+        weight: 1
+      - path: Armature/Spine_001/Head_0
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Horn
+        weight: 1
+      - path: Horn_Circle
+        weight: 1
+      - path: Mane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Robe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ArmatureAction
+      takeName: ArmatureAction
+      firstFrame: -1
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Leg_001_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/Leg_001_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/Spine_001
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L/Hand_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R/Hand_R
+        weight: 1
+      - path: Armature/Spine_001/Head_0
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Horn
+        weight: 1
+      - path: Horn_Circle
+        weight: 1
+      - path: Mane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Robe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Leg_001_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/Leg_001_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/Spine_001
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L/Hand_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R/Hand_R
+        weight: 1
+      - path: Armature/Spine_001/Head_0
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Horn
+        weight: 1
+      - path: Horn_Circle
+        weight: 1
+      - path: Mane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Robe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Default Take
+      firstFrame: 40
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Leg_001_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/Leg_001_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/Spine_001
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L/Hand_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R/Hand_R
+        weight: 1
+      - path: Armature/Spine_001/Head_0
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Horn
+        weight: 1
+      - path: Horn_Circle
+        weight: 1
+      - path: Mane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Robe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Default Take
+      firstFrame: 60
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Leg_001_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L
+        weight: 1
+      - path: Armature/Leg_001_L/Leg_002_L/Foot_L
+        weight: 1
+      - path: Armature/Leg_001_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R
+        weight: 1
+      - path: Armature/Leg_001_R/Leg_002_R/Foot_R
+        weight: 1
+      - path: Armature/Spine_001
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_L/Arm_002_L/Arm_003_L/Hand_L
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R
+        weight: 1
+      - path: Armature/Spine_001/Arm_001_R/Arm_002_R/Arm_003_R/Hand_R
+        weight: 1
+      - path: Armature/Spine_001/Head_0
+        weight: 1
+      - path: Head
+        weight: 1
+      - path: Horn
+        weight: 1
+      - path: Horn_Circle
+        weight: 1
+      - path: Mane
+        weight: 1
+      - path: Plane_001
+        weight: 1
+      - path: Robe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
