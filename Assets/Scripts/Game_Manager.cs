@@ -94,7 +94,7 @@ public class Game_Manager : MonoBehaviour {
         }
 
         //shrine gui
-        shrinesLeftText.text = "Shrines Found: " + shrinesCollected.ToString() + "/9";
+       // shrinesLeftText.text = "Shrines Found: " + shrinesCollected.ToString() + "/9";
 
     }
 

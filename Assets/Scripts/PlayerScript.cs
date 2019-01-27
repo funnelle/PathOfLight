@@ -60,6 +60,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private float regenCooldown;
 
+    private Animator anim;
+
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
@@ -73,6 +75,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         mousePos = Vector3.zero;
         hutRef = GameObject.FindGameObjectWithTag("Hut");
         regenCooldown = Time.time + regenDelay;
+        anim = GetComponent<Animator>();    
     }
 
     void FixedUpdate ()
@@ -90,6 +93,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
         float v = Input.GetAxisRaw("Vertical");
 
         moveVals.Set(h, 0f, v);
+        if (anim != null)
+            anim.SetFloat(0, moveVals.magnitude);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -155,6 +160,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private void RangeAttack () {
         Vector3 spawnLoc = transform.position + transform.forward * 0.7f;
         Instantiate(projectile, spawnLoc, transform.rotation);
+        if (anim != null);
+            anim.Play("Attack");
     }
 /*
     private void BuildMode() {

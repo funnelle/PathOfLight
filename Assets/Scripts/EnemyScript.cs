@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
 
     public float health;
 
-    public GameObject gManagerRef;
+    private GameObject gManagerRef;
 
     private GameObject attackHitbox;
     
@@ -46,7 +46,10 @@ public class EnemyScript : MonoBehaviour, IDamageable
         target = hutRef;
         prevTarg = target;
         attackCooldown = Time.time + attackDelay;
-        //health = gManagerRef.GetComponent<Game_Manager>().enemySpawnHP;
+        gManagerRef = GameObject.Find("Game_Manager");
+        if (gManagerRef == null)
+            Destroy(gameObject);
+        health = gManagerRef.GetComponent<Game_Manager>().enemySpawnHP;
     }
 
 

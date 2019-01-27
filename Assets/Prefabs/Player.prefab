@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5787328344825365949}
   - component: {fileID: 5787328344825365889}
   - component: {fileID: 5787328344825365894}
+  - component: {fileID: 3921409699993224562}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -122,7 +123,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  detectDistance: 0
+  health: 0
+  atkCost: 0
+  torchCost: 0
   projectile: {fileID: 1935886765089439153, guid: 137c336624d4fda4fbcbd4cb3d8490ec,
     type: 3}
-  torchObj: {fileID: 0}
-  torchPreview: {fileID: 0}
+  gManagerRef: {fileID: 0}
+--- !u!114 &3921409699993224562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787328344825365948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4aaca9ebc3c7d044985636834ffc40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeDamage: {fileID: 0}
+  attack: {fileID: 0}
+  audioObj: {fileID: 9130293681109658273, guid: 854b98ed355050e43802cda7aae95628,
+    type: 3}

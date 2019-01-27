@@ -273,6 +273,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &699448958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699448960}
+  - component: {fileID: 699448959}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &699448959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699448958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7df15a6e2a4748d7b619102d5171759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchLine1: []
+  torchLine2: []
+  torchLine3: []
+  torchLine4: []
+  torchLine5: []
+  torchLine6: []
+  torchLine7: []
+  torchLine8: []
+  torchLine9: []
+  totalMana: 5
+  maxMana: 3
+  manaPerSecond: 1
+  shrinesCollected: 0
+  enemySpawnHP: 3
+  totalManaText: {fileID: 0}
+  shrinesLeftText: {fileID: 0}
+  healthText: {fileID: 0}
+--- !u!4 &699448960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699448958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.5036564, y: 4.8975015, z: -4.832108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339937462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5787328344825365948, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
@@ -293,7 +353,7 @@ GameObject:
   - component: {fileID: 1531927742}
   m_Layer: 0
   m_Name: Hut
-  m_TagString: Torch
+  m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -633,6 +693,26 @@ PrefabInstance:
     - target: {fileID: 5787328344825365894, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
         type: 3}
       propertyPath: detectDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787328344825365894, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
+        type: 3}
+      propertyPath: gManagerRef
+      value: 
+      objectReference: {fileID: 699448958}
+    - target: {fileID: 5787328344825365894, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
+        type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787328344825365894, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
+        type: 3}
+      propertyPath: atkCost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787328344825365894, guid: 54c3aec5b0fab2248aa4bb3e44209c83,
+        type: 3}
+      propertyPath: torchCost
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
