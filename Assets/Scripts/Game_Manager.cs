@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class Game_Manager : MonoBehaviour {
     public List<List<GameObject>> torchLineLists = new List<List<GameObject>>();
     public List<GameObject> torchLine1 = new List<GameObject>();
-    /*public List<GameObject> torchLine2 = new List<GameObject>();
+    public List<GameObject> torchLine2 = new List<GameObject>();
     public List<GameObject> torchLine3 = new List<GameObject>();
     public List<GameObject> torchLine4 = new List<GameObject>();
     public List<GameObject> torchLine5 = new List<GameObject>();
     public List<GameObject> torchLine6 = new List<GameObject>();
     public List<GameObject> torchLine7 = new List<GameObject>();
     public List<GameObject> torchLine8 = new List<GameObject>();
-    public List<GameObject> torchLine9 = new List<GameObject>();*/
+    public List<GameObject> torchLine9 = new List<GameObject>();
 
     public float totalMana = 0f;
     public float manaPerSecond = 1.0f;
@@ -25,14 +25,14 @@ public class Game_Manager : MonoBehaviour {
 
     private void Start() {
         torchLineLists.Add(torchLine1);
-        /*torchLineLists.Add(torchLine2);
+        torchLineLists.Add(torchLine2);
         torchLineLists.Add(torchLine3);
         torchLineLists.Add(torchLine4);
         torchLineLists.Add(torchLine5);
         torchLineLists.Add(torchLine6);
         torchLineLists.Add(torchLine7);
         torchLineLists.Add(torchLine8);
-        torchLineLists.Add(torchLine9);*/
+        torchLineLists.Add(torchLine9);
     }
 
     private void Update() {
