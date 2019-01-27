@@ -36,6 +36,7 @@ public class Game_Manager : MonoBehaviour {
     }
 
     private void Update() {
+        //Torch Lines
         for (int i = 0; i < torchLineLists.Count; i++) {
             bool connectionLost = false; 
             for (int j = 0; j < torchLineLists[i].Count; j++) {
@@ -59,6 +60,7 @@ public class Game_Manager : MonoBehaviour {
                 }
             }
         }
+        //Mana gui
         if (totalMana < 200 && onCollectingMana == false) {
             onCollectingMana = true;
             StartCoroutine(manaCounter());

@@ -146,6 +146,7 @@ MonoBehaviour:
   - {fileID: 1237628209}
   - {fileID: 1722852661}
   - {fileID: 752941388}
+  - {fileID: 1651982802}
   totalMana: 0
   manaPerSecond: 1
   totalManaText: {fileID: 749308230}
@@ -723,6 +724,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 2243954436336108448, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: powered
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663a54e4cb605d64382213ad998933c4, type: 3}
 --- !u!1 &116151618
@@ -862,6 +868,26 @@ PrefabInstance:
     - target: {fileID: 1751138081630746, guid: 663a54e4cb605d64382213ad998933c4, type: 3}
       propertyPath: m_TagString
       value: Torch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243954436336108448, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: powered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204118826550844196, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204118826550844196, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544870372761772615, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663a54e4cb605d64382213ad998933c4, type: 3}
@@ -3472,6 +3498,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377584719871289898, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 9974793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
 --- !u!4 &636343713 stripped
@@ -5758,7 +5789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.2017561
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5766,7 +5797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9794358
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_RootOrder
@@ -5778,10 +5809,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 23.279001
       objectReference: {fileID: 0}
     - target: {fileID: 4563299069377240, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 782167615654526639, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: powered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147924320053498352, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 147924320053498352, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147924320053498352, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377584719871289898, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 9974793}
+    - target: {fileID: 6377584719871289898, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: powered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6376,6 +6437,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6377584719871289898, guid: 014f02eeee9bace45962b4592582deb7,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 9974793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 014f02eeee9bace45962b4592582deb7, type: 3}
 --- !u!4 &986768229 stripped
@@ -13001,6 +13067,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9204118826550844196, guid: 663a54e4cb605d64382213ad998933c4,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 663a54e4cb605d64382213ad998933c4, type: 3}
 --- !u!43 &1524553286
@@ -13397,6 +13468,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4704668018914576, guid: 663a54e4cb605d64382213ad998933c4,
     type: 3}
   m_PrefabInstance: {fileID: 137606955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1651982802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1718779548900956, guid: 014f02eeee9bace45962b4592582deb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 947058093}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1655213286
 Mesh:
@@ -14826,7 +14903,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707980164}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
