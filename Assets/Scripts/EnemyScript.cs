@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         proximityTorches = new List<GameObject>();
-        // semi random initial targer (middle of level???)
+        // initial target: Main hut
         hutRef = GameObject.Find("Hut");
         target = hutRef;
         prevTarg = target;
@@ -42,7 +42,6 @@ public class EnemyScript : MonoBehaviour
 
     private void TargetSelection()
     {
-        //Debug.Log(proximityTorches);
         if (target.tag != "Player")
         {
             float minTorch = 99f;
