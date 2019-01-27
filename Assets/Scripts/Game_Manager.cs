@@ -16,12 +16,18 @@ public class Game_Manager : MonoBehaviour {
     public List<GameObject> torchLine9 = new List<GameObject>();
 
     public float totalMana = 0f;
-    public float manaPerSecond = 1.0f;
+    public float maxMana = 3f;
+    public float manaPerSecond = 1f;
+    public float shrinesCollected = 0f;
+
+    public float enemySpawnHP = 3f;
+
     public Text totalManaText;
     public Text shrinesLeftText;
     public Text healthText;
 
     private bool onCollectingMana = false;
+    private bool onIncreasingHP = false;
 
     private void Start() {
         torchLineLists.Add(torchLine1);
@@ -36,11 +42,37 @@ public class Game_Manager : MonoBehaviour {
     }
 
     private void Update() {
+        //enemy HP timer
+        if (onIncreasingHP == false) {
+            onIncreasingHP = true;
+            StartCoroutine(enemyHPTimer());
+        }
+
+        //Mana gui
+        if (totalMana < maxMana && onCollectingMana == false) {
+            onCollectingMana = true;
+            StartCoroutine(manaCounter());
+        }
+
         //Torch Lines
         for (int i = 0; i < torchLineLists.Count; i++) {
             bool connectionLost = false; 
             for (int j = 0; j < torchLineLists[i].Count; j++) {
                 if (connectionLost == true) {
+                    LineRenderer line = torchLineLists[i][j].GetComponent<LineRenderer>();
+                    line.enabled = false;
+                }
+                if (torchLineLists[i][j].GetComponent<Torch_Connection>().powered == true &&
+                torchLineLists[i][j+1].gameObject.CompareTag("Shrine")) {
+                    torchLineLists[i][j + 1].GetComponent<Torch_Connection>().powered = true;
+                    LineRenderer line = torchLineLists[i][j].GetComponent<LineRenderer>();
+                    line.enabled = true;
+                    line.SetPosition(0, torchLineLists[i][j].transform.position);
+                    line.SetPosition(1, torchLineLists[i][j + 1].transform.position);
+                }
+                if (torchLineLists[i][j].GetComponent<Torch_Connection>().powered == true &&
+                torchLineLists[i][j + 1].gameObject.CompareTag("Shrine") && connectionLost == true) {
+                    torchLineLists[i][j + 1].GetComponent<Torch_Connection>().powered = false;
                     LineRenderer line = torchLineLists[i][j].GetComponent<LineRenderer>();
                     line.enabled = false;
                 }
@@ -60,11 +92,9 @@ public class Game_Manager : MonoBehaviour {
                 }
             }
         }
-        //Mana gui
-        if (totalMana < 200 && onCollectingMana == false) {
-            onCollectingMana = true;
-            StartCoroutine(manaCounter());
-        }
+
+        //shrine gui
+        shrinesLeftText.text = "Shrines Found: " + shrinesCollected.ToString() + "/9";
     }
 
     private IEnumerator manaCounter() {
@@ -72,6 +102,12 @@ public class Game_Manager : MonoBehaviour {
         totalManaText.text = "Total Mana: " + totalMana.ToString();
         yield return new WaitForSeconds(1f);
         onCollectingMana = false;
+    }
+
+    private IEnumerator enemyHPTimer() {
+        yield return new WaitForSeconds(60f);
+        enemySpawnHP += 1f;
+        onIncreasingHP = false;
     }
 }
 
