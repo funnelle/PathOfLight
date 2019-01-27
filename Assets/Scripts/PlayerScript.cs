@@ -18,7 +18,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public Transform torchObj;
 
-
     //public GameObject torchPreview;
 
     private float maxHealth;
@@ -45,6 +44,14 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private RaycastHit torchHit;
 
+    private GameObject hutRef;
+
+    private float regenRange = 3.0f;
+
+    private float regenDelay = 5.0f;
+
+    private float regenCooldown;
+
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
@@ -55,6 +62,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
         defaultMoveSpeed = moveSpeed;
         buildMoveSpeed = moveSpeed * 0.6f;
         mousePos = Vector3.zero;
+        hutRef = GameObject.FindGameObjectWithTag("Hut");
+        regenCooldown = Time.time + regenDelay;
     }
 
     void FixedUpdate ()
@@ -188,5 +197,17 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void Die()
     {
         //how to die
+    }
+
+    public void RegenHP() {
+        //detect hut
+        Ray hutRay = new Ray(transform.position, hutRef.transform.position);
+        RaycastHit hutHit;
+        if (Physics.Raycast(hutRay, out hutHit, regenRange)) {
+            if (regenCooldown < Time.time) {
+                health++;
+            }
+        }
+        //increment hp
     }
 }
