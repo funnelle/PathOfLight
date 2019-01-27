@@ -82,7 +82,6 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.tag == "Torch")
         {
             proximityTorches.Add(other.gameObject);
-            Debug.Log("Found a torch");
         }
     }
 
@@ -91,7 +90,6 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.tag == "Torch")
         {
             proximityTorches.Remove(other.gameObject);
-            Debug.Log("goodbye torch.");
         }
     }
 }

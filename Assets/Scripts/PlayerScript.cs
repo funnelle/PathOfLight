@@ -10,17 +10,21 @@ public class PlayerScript : MonoBehaviour
 
     public float moveSpeed;
 
+    public float detectDistance;
+
     public Transform projectile;
 
     public Transform torchObj;
 
-    public GameObject torchPreview;
+    //public GameObject torchPreview;
 
     private float defaultMoveSpeed;
 
     private float buildMoveSpeed;
 
     private int groundMask;
+
+    private int torchMask;
 
     private Vector3 moveVals;
 
@@ -30,22 +34,29 @@ public class PlayerScript : MonoBehaviour
 
     private Vector3 mousePos;
 
+    private GameObject targTorch;
+
+    private Coroutine cor;
+    private RaycastHit torchHit;
+
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
         groundMask = LayerMask.GetMask("Ground");
+        torchMask = LayerMask.GetMask("Torch");
         isBuilding = false;
         defaultMoveSpeed = moveSpeed;
         buildMoveSpeed = moveSpeed * 0.6f;
         mousePos = Vector3.zero;
     }
 
-    void FixedUpdate () {
+    void FixedUpdate ()
+    {
         GetInput();
 
         Move();
         Rotate();
-  
+       
     }
 
     // Handles all input regarding this object
@@ -59,13 +70,25 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isBuilding)
                 RangeAttack();
-            else
-                BuildTorch();
+           // else
+                //BuildTorch();
         }
 
-       // if (Input.GetMouseButtonDown(1)) {
-       //     BuildMode();
+        // if (Input.GetMouseButtonDown(1)) {
+        //     BuildMode();
         //}
+       
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (targTorch != null) {
+                Ray torchDetectRay = new Ray(transform.position, targTorch.transform.position - transform.position);
+                //RaycastHit torchHit;
+                if (Physics.Raycast(torchDetectRay, out torchHit, detectDistance)) {
+                    // turn torch On.
+                    targTorch.GetComponent<Torch_Connection>().powered = true;
+                }
+            }
+        }
     }
 
     // Move player based on user input
@@ -100,7 +123,7 @@ public class PlayerScript : MonoBehaviour
         Vector3 spawnLoc = transform.position + transform.forward * 0.7f;
         Instantiate(projectile, spawnLoc, transform.rotation);
     }
-
+/*
     private void BuildMode() {
         if (isBuilding)
         {
@@ -122,5 +145,28 @@ public class PlayerScript : MonoBehaviour
         isBuilding = false;
         torchPreview.GetComponent<MeshRenderer>().enabled = false;
         moveSpeed = defaultMoveSpeed;
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Torch")) {
+            targTorch = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Torch")) {
+            if (targTorch == other.gameObject) {
+                targTorch = null;
+            }
+        }
+    }
+
+    private IEnumerator DrawMyLine(RaycastHit torchHit)
+    {
+        Debug.Log(targTorch == torchHit.collider.gameObject);
+
+        yield return new WaitForSeconds(2.0f);
     }
 }
