@@ -62,6 +62,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private Animator anim;
 
+    private PlayerAudios audios;
+
     
     void Start () {
         rbody = GetComponent<Rigidbody>();
@@ -75,7 +77,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
         mousePos = Vector3.zero;
         hutRef = GameObject.FindGameObjectWithTag("Hut");
         regenCooldown = Time.time + regenDelay;
-        anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
+        audios = GetComponent <PlayerAudios>();
     }
 
     void FixedUpdate ()
@@ -160,8 +163,10 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private void RangeAttack () {
         Vector3 spawnLoc = transform.position + transform.forward * 0.7f;
         Instantiate(projectile, spawnLoc, transform.rotation);
-        if (anim != null);
+        if (anim != null){
             anim.Play("Attack");
+        }
+        audios.PlaySFX("Attack");
     }
 /*
     private void BuildMode() {
@@ -212,6 +217,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public void TakeDamage() {
         health--;
+        audios.PlaySFX("Take Damage");
         if (health <= 0)
         {
             Die();

@@ -8,19 +8,21 @@ public class PlayerAudios : MonoBehaviour
 
     public AudioClip attack;
 
-    public AudioObject audioObj;
+    public AudioSource source;
 
     public void PlaySFX(string action)
     {
-        audioObj = new AudioObject();
-        Instantiate(audioObj, gameObject.transform);
-
         if (action == "Attack")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(attack);
+            //audioObj.GetComponent<AudioObject>().PlayClip(attack);
+            source.clip = attack;
+
         }
         else if (action == "Take Damage") {
-            audioObj.GetComponent<AudioObject>().PlayClip(takeDamage);
+            //audioObj.GetComponent<AudioObject>().PlayClip(takeDamage);
+            source.clip = takeDamage;
         }
+
+        source.Play();
     }
 }

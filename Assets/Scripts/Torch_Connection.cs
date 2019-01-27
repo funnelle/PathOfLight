@@ -10,6 +10,11 @@ public class Torch_Connection : MonoBehaviour, IDamageable {
     public ParticleSystem fire;
     public Game_Manager gm;
 
+    private TorchAudios torchAudios;
+    private ShrineAudios shrineAudios;
+    private bool isTorch = false;
+    
+
     private bool found = false;
 
     // Start is called before the first frame update
@@ -18,6 +23,11 @@ public class Torch_Connection : MonoBehaviour, IDamageable {
         if (this.tag == "Torch") {
             fire.Stop();
         }
+
+        torchAudios = GetComponent<TorchAudios>();
+        shrineAudios = GetComponent<ShrineAudios>();
+        if (gameObject.CompareTag("Torch"))
+            isTorch = true;
     }
 
     // Update is called once per frame
@@ -53,5 +63,12 @@ public class Torch_Connection : MonoBehaviour, IDamageable {
 
     public void TakeDamage() {
         powered = false;
+        if (isTorch)
+        {
+            torchAudios.PlaySFX("Turn Off");
+        }
+        else {
+            shrineAudios.PlaySFX("Disonnect");
+        }
     }
 }

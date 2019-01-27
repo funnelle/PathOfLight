@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4aaca9ebc3c7d044985636834ffc40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  takeDamage: {fileID: 0}
-  attack: {fileID: 0}
-  audioObj: {fileID: 9130293681109658273, guid: 854b98ed355050e43802cda7aae95628,
+  takeDamage: {fileID: 8300000, guid: be1f74fdf12bd324bad29885a56dbb3a, type: 3}
+  attack: {fileID: 8300000, guid: b9b37f19a98b46046b85e80a84ec2e85, type: 3}
+  audioObj: {fileID: 9219690628962855702, guid: 854b98ed355050e43802cda7aae95628,
     type: 3}

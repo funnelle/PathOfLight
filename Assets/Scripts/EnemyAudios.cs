@@ -8,19 +8,25 @@ public class EnemyAudios : MonoBehaviour
 
     public AudioClip death;
 
-    public AudioObject audioObj;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void PlaySFX(string action)
     {
-        audioObj = new AudioObject();
 
         if (action == "Death")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(death);
+            source.clip = death;
         }
         else if (action == "Take Damage")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(takeDamage);
+            source.clip = takeDamage;
         }
+        source.Play();
+
     }
 }
