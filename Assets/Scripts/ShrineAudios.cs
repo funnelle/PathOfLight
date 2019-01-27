@@ -8,20 +8,23 @@ public class ShrineAudios : MonoBehaviour
 
     public AudioClip disconnect;
 
-    public AudioObject audioObj;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void PlaySFX(string action)
     {
-        audioObj = new AudioObject();
-        Instantiate(audioObj, gameObject.transform);
-
         if (action == "Connect")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(connect);
+            source.clip = connect;
         }
         else if (action == "Disconnect")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(disconnect);
+            source.clip = disconnect;
         }
+        source.Play();
     }
 }

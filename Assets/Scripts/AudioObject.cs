@@ -16,10 +16,12 @@ public class AudioObject : MonoBehaviour
         source.Play();
 
         StartCoroutine("DestroyObj", newClip);
+        Debug.Log("am i still running??");
     }
 
     private IEnumerator DestroyObj(AudioClip clip) {
         yield return new WaitForSeconds(clip.length);
-        Destroy(this.gameObject);
+        if (gameObject.activeInHierarchy)
+            Destroy(this.gameObject);
     }
 }

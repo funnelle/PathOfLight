@@ -10,24 +10,29 @@ public class TorchAudios : MonoBehaviour
 
     public AudioClip alreadyOn;
 
-    public AudioObject audioObj;
+    private AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void PlaySFX(string action)
     {
-        audioObj = new AudioObject();
 
         if (action == "Turn On")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(on);
+            source.clip = on;
         }
         else if (action == "Turn Off")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(off);
+            source.clip = off;
         }
         else if (action == "Already On")
         {
-            audioObj.GetComponent<AudioObject>().PlayClip(alreadyOn);
+            source.clip = alreadyOn;
         }
+        source.Play();
     }
 }
 

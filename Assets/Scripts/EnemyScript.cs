@@ -35,6 +35,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
 
     private float attackCooldown;
 
+    private EnemyAudios audios;
+
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
         if (gManagerRef == null)
             Destroy(gameObject);
         health = gManagerRef.GetComponent<Game_Manager>().enemySpawnHP;
+        audios = GetComponent<EnemyAudios>();
     }
 
 
@@ -142,6 +145,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
 
     public void TakeDamage() {
         health--;
+        audios.PlaySFX("Take Damage");
 
         if (health <= 0) {
             Die();
@@ -150,5 +154,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
 
     public void Die() {
         //how to die
+        audios.PlaySFX("Death");
+        Destroy(gameObject);
     }
 }

@@ -31,7 +31,10 @@ public class ProjectileScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy")) {
             //Deal damage
-            Debug.Log("Deal damage.");
+            IDamageable targ = collision.gameObject.GetComponent<IDamageable>();
+            if (targ != null) {
+                targ.TakeDamage();
+            }
         }
         DestroyProjectile();
     }
