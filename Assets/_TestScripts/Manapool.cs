@@ -49,8 +49,6 @@ public class Manapool : MonoBehaviour
         {
             FindTorch();
         }
-        //ManaWithTorchesLit();
-        //Debug.Log(torchesCount);
     }
     // if all three torches are lit, then give the player 1 mana
     public void ManaWithTorchesLit()
