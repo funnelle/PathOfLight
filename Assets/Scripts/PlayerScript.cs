@@ -14,9 +14,17 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public float health;
 
+    public float atkCost;
+
+    public float torchCost;
+
     public Transform projectile;
 
     public Transform torchObj;
+
+    public GameObject gManagerRef;
+
+    private Game_Manager gManagerScript;
 
     //public GameObject torchPreview;
 
@@ -57,6 +65,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         rbody = GetComponent<Rigidbody>();
         groundMask = LayerMask.GetMask("Ground");
         torchMask = LayerMask.GetMask("Torch");
+        gManagerScript = gManagerRef.GetComponent<Game_Manager>();
         isBuilding = false;
         health = maxHealth;
         defaultMoveSpeed = moveSpeed;
@@ -85,7 +94,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
         if (Input.GetMouseButtonDown(0))
         {
             if (!isBuilding)
-                RangeAttack();
+            {
+                if (gManagerScript.totalMana > atkCost)
+                    RangeAttack();
+                else
+                    Debug.Log("Insufficient Mana.");
+            }
            // else
                 //BuildTorch();
         }
@@ -101,7 +115,10 @@ public class PlayerScript : MonoBehaviour, IDamageable
                 //RaycastHit torchHit;
                 if (Physics.Raycast(torchDetectRay, out torchHit, detectDistance)) {
                     // turn torch On.
-                    targTorch.GetComponent<Torch_Connection>().powered = true;
+                    if (gManagerScript.totalMana > torchCost)
+                        targTorch.GetComponent<Torch_Connection>().powered = true;
+                    else
+                        Debug.Log("Insufficient Mana.");
                 }
             }
         }
