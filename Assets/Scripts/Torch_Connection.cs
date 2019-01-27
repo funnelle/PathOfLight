@@ -31,9 +31,9 @@ public class Torch_Connection : MonoBehaviour, IDamageable {
                 gm.shrinesCollected++;
                 gm.manaPerSecond += 0.5f;
                 gm.maxMana += 1f;
-                if (!fire.isPlaying && this.tag == "Torch") {
-                    fire.Play();
-                }
+            }
+            if (!fire.isPlaying && this.tag == "Torch") {
+                fire.Play();
             }
         }
         else {
