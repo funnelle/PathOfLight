@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public Transform projectile;
 
-    public Transform torchObj;
+    //public Transform torchObj;
 
     public GameObject gManagerRef;
 
@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     //public GameObject torchPreview;
 
-    private float maxHealth;
+    private float maxHealth = 3.0f;
 
     private float defaultMoveSpeed;
 

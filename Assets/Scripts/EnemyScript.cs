@@ -84,7 +84,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
     }
 
     private void MoveTowardsTarget()
-    {
+    {   
         agent.SetDestination(target.transform.position);
     }
 
