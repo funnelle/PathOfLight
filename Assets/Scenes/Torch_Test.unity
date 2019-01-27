@@ -505,6 +505,8 @@ MonoBehaviour:
   - {fileID: 2078533229}
   - {fileID: 977604909}
   - {fileID: 783830959}
+  totalMana: 0
+  manaPerSecond: 1
 --- !u!4 &1240258227
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: powered
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552781663011091741, guid: d20cdd720f41d443595191060da16cb7,
+        type: 3}
+      propertyPath: m_Loop
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20cdd720f41d443595191060da16cb7, type: 3}
