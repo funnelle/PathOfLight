@@ -125,5 +125,4 @@ MonoBehaviour:
   projectile: {fileID: 1935886765089439153, guid: 137c336624d4fda4fbcbd4cb3d8490ec,
     type: 3}
   torchObj: {fileID: 0}
-  torchPreview: {fileID: 7903703736595231017, guid: 062f917c90b530d45824899b8e962d70,
-    type: 3}
+  torchPreview: {fileID: 0}
