@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour, IDamageable
 { 
     /* 
     25-Jan-2019 https://unity3d.com/learn/tutorials/projects/survival-shooter/player-character?playlist=17144
@@ -12,11 +12,16 @@ public class PlayerScript : MonoBehaviour
 
     public float detectDistance;
 
+    public float health;
+
     public Transform projectile;
 
     public Transform torchObj;
 
+
     //public GameObject torchPreview;
+
+    private float maxHealth;
 
     private float defaultMoveSpeed;
 
@@ -37,6 +42,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject targTorch;
 
     private Coroutine cor;
+
     private RaycastHit torchHit;
 
     
@@ -45,6 +51,7 @@ public class PlayerScript : MonoBehaviour
         groundMask = LayerMask.GetMask("Ground");
         torchMask = LayerMask.GetMask("Torch");
         isBuilding = false;
+        health = maxHealth;
         defaultMoveSpeed = moveSpeed;
         buildMoveSpeed = moveSpeed * 0.6f;
         mousePos = Vector3.zero;
@@ -168,5 +175,18 @@ public class PlayerScript : MonoBehaviour
         Debug.Log(targTorch == torchHit.collider.gameObject);
 
         yield return new WaitForSeconds(2.0f);
+    }
+
+    public void TakeDamage() {
+        health--;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //how to die
     }
 }

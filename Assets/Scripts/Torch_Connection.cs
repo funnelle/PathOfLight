@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Torch_Connection : MonoBehaviour {
+public class Torch_Connection : MonoBehaviour, IDamageable {
     [SerializeField] private float lightIntensity = 15.44f;
 
     public bool powered = false;
@@ -41,5 +41,9 @@ public class Torch_Connection : MonoBehaviour {
             }
         }
 
+    }
+
+    public void TakeDamage() {
+        powered = false;
     }
 }
