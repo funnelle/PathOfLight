@@ -10,6 +10,8 @@ public class Torch_Connection : MonoBehaviour {
     public ParticleSystem fire;
     public Game_Manager gm;
 
+    private bool found = false;
+
     // Start is called before the first frame update
     void Start() {
         torchLight.intensity = 0f;
@@ -23,23 +25,29 @@ public class Torch_Connection : MonoBehaviour {
         //controls light
         if (powered) {
             torchLight.intensity = lightIntensity;
-            if (!fire.isPlaying && this.tag == "Torch") {
-                fire.Play();
+            if (gameObject.CompareTag("Shrine") && found == false) {
+                Debug.Log("powered");
+                found = true;
+                gm.shrinesCollected++;
+                gm.manaPerSecond += 0.5f;
+                gm.maxMana += 1f;
+                if (!fire.isPlaying && this.tag == "Torch") {
+                    fire.Play();
+                }
             }
-            if (this.tag == "Shrine") {
-                gm.manaPerSecond += 1f;
-            }
-
         }
         else {
             torchLight.intensity = 0f;
+            if (gameObject.CompareTag("Shrine") && found == true) {
+                Debug.Log("unpowered");
+                found = false;
+                gm.shrinesCollected--;
+                gm.manaPerSecond -= 0.5f;
+                gm.maxMana -= 1f;
+            }
             if (fire.isPlaying && this.tag == "Torch") {
                 fire.Stop();
             }
-            if (this.tag == "Shrine") {
-                gm.manaPerSecond -= 1f;
-            }
         }
-
     }
 }
