@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4201155402037703329}
   - component: {fileID: 7496942753672583785}
   - component: {fileID: 1155361456556031237}
+  - component: {fileID: 6556215247830805918}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -161,8 +162,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3794604294088088013}
   detectDist: 5
-  proximityTorches: []
-  target: {fileID: 0}
+  attackDelay: 2
+  health: 0
+--- !u!114 &6556215247830805918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790840081939689068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7b55c13ed4e9f4eb131b208eddbd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeDamage: {fileID: 0}
+  death: {fileID: 0}
+  audioObj: {fileID: 9130293681109658273, guid: 854b98ed355050e43802cda7aae95628,
+    type: 3}
 --- !u!1 &6916528997506930084
 GameObject:
   m_ObjectHideFlags: 0

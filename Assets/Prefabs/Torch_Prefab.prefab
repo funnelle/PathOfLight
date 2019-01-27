@@ -4710,6 +4710,7 @@ GameObject:
   - component: {fileID: 5719360550346148112}
   - component: {fileID: 1553358386155409383}
   - component: {fileID: 7760987357890548008}
+  - component: {fileID: 8727603131937282931}
   m_Layer: 0
   m_Name: Torch_Prefab
   m_TagString: Torch
@@ -4859,6 +4860,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8727603131937282931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630258170577412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f78ae8c56bccb4ba21365cbe4d1e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {fileID: 0}
+  off: {fileID: 0}
+  alreadyOn: {fileID: 0}
+  audioObj: {fileID: 9130293681109658273, guid: 854b98ed355050e43802cda7aae95628,
+    type: 3}
 --- !u!1 &1751138081630746
 GameObject:
   m_ObjectHideFlags: 0

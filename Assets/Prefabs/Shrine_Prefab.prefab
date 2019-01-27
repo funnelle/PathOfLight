@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4563299069377240}
   - component: {fileID: 6377584719871289898}
   - component: {fileID: 7554466157656599241}
+  - component: {fileID: 2854209728354143650}
   m_Layer: 0
   m_Name: Shrine_Prefab
   m_TagString: Shrine
@@ -225,6 +226,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &2854209728354143650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718779548900956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f94a7e0a7e2f0408410f216cea0f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connect: {fileID: 0}
+  disconnect: {fileID: 0}
+  audioObj: {fileID: 9130293681109658273, guid: 854b98ed355050e43802cda7aae95628,
+    type: 3}
 --- !u!1 &5119853421712565552
 GameObject:
   m_ObjectHideFlags: 0

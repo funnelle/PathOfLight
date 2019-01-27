@@ -6,13 +6,20 @@ public class AudioObject : MonoBehaviour
 {
     public AudioSource source;
 
-    //private AudioClip clip;
-
-    void Start () {
-        //SetClip(someClip);
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
     }
 
-   /* public void SetClip(AudioCip newClip) {
-        clip = newClip;
-    }*/
+    public void PlayClip(AudioClip newClip) {
+        source.clip = newClip;
+        source.Play();
+
+        StartCoroutine("DestroyObj", newClip);
+    }
+
+    private IEnumerator DestroyObj(AudioClip clip) {
+        yield return new WaitForSeconds(clip.length);
+        Destroy(this.gameObject);
+    }
 }
