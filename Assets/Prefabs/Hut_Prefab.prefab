@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 136410588755539036}
   - component: {fileID: 7215760735856086417}
   - component: {fileID: 7068950333907091217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hut_Prefab
-  m_TagString: Untagged
+  m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 4109138305149682}
   - component: {fileID: 33460322280503504}
   - component: {fileID: 23379592407554586}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3798098840863812909}
   - component: {fileID: 2435212498120238404}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LightSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}

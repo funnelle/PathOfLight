@@ -26,4 +26,13 @@ public class ProjectileScript : MonoBehaviour
     public void DestroyProjectile() {
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) {
+            //Deal damage
+            Debug.Log("Deal damage.");
+        }
+        DestroyProjectile();
+    }
 }
