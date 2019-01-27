@@ -95,7 +95,6 @@ public class Game_Manager : MonoBehaviour {
 
         //shrine gui
         shrinesLeftText.text = "Shrines Found: " + shrinesCollected.ToString() + "/9";
-
     }
 
     private IEnumerator manaCounter() {
